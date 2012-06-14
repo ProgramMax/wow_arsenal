@@ -1,0 +1,7 @@
+
+*.bak~
+/testFile.log
+*.gradle~
+/build
+/.gradle
+*.groovy~
