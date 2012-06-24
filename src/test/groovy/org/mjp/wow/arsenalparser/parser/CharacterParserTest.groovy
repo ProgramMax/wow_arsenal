@@ -185,13 +185,14 @@ class CharacterParserTest {
         // RangedStats[rangedAttackpower=6373,rangedDamage=2214–2890,
         // rangedDps=1387.9,rangedSpeed=1.84%,rangedHaste=3.32%,
         // rangedHit=+4.25%,rangedCrit=24.2%]
-        assert 6373         == rangedStats.rangedAttackpower
-        assert '2214–2890'  == rangedStats.rangedDamage
-        assert 1387.9       == rangedStats.rangedDps
-        assert 1.84         == rangedStats.rangedSpeed
-        assert 3.32         == rangedStats.rangedHaste
-        assert 4.25         == rangedStats.rangedHit
-        assert 24.2         == rangedStats.rangedCrit
+        assert 6373     == rangedStats.rangedAttackpower
+        assert 2214     == rangedStats.minRangedDamage
+        assert 2890     == rangedStats.maxRangedDamage
+        assert 1387.9   == rangedStats.rangedDps
+        assert 1.84     == rangedStats.rangedSpeed
+        assert 3.32     == rangedStats.rangedHaste
+        assert 4.25     == rangedStats.rangedHit
+        assert 24.2     == rangedStats.rangedCrit
     }
 
     @Test def void testGetSpellStats() {

@@ -8,7 +8,6 @@ class Downloader {
     
     def sourceUrl
     
-    Downloader() {}
     Downloader(def sourceUrl) {
         this.sourceUrl = sourceUrl
     }
@@ -18,6 +17,11 @@ class Downloader {
      * destAddress is the destination address in string format
      */
     def download(final def localDir) {
+        def targetFileDir = new File(localDir)
+        if (!targetFileDir.exists()) {
+                targetFileDir.mkdirs()
+        }
+		
         def filename = localDir + '/' + sourceUrl.tokenize("/")[-1]
         def file = new FileOutputStream(filename)
         def out = new BufferedOutputStream(file)

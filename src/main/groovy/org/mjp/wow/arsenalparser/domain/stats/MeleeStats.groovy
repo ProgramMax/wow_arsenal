@@ -27,23 +27,17 @@ class MeleeStats {
 
    // MeleeStats[meleeAttackpower=12683,meleeDamage=2952–3807,meleeDps=1940,0/970,0,
    // meleeSpeed=1,74/1,36,expertise=9/9,meleeHaste=3.32%,meleeHit=+4.25%,meleeCrit=24.2%]
-
-    def String toString() {
-        def meleeDamage = String.format('%s-%s', minMeleeDamage, maxMeleeDamage)
-        def meleeDps = String.format('%s/%s', mainhandMeleeDps, offhandMeleeDps)
-        def meleeSpeed = String.format('%s/%s', mainhandMeleeSpeed, offhandMeleeSpeed)
-        def expertise = String.format('%s/%s', mainhandExpertise, offhandExpertise)
-
-        return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
-            .append('meleeAttackpower', this.meleeAttackpower)
-            .append('meleeDamage', meleeDamage)
-            .append('meleeDps', meleeDps)
-            .append('meleeSpeed', meleeSpeed)
-            .append('expertise', expertise)
-            .append('meleeHaste', String.format('%s%%', this.meleeHaste))
-            .append('meleeHit', String.format('+%s%%', this.meleeHit))
-            .append('meleeCrit', String.format('%s%%', this.meleeCrit))
-            .toString()
-    }
+   def String toString() {
+       return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+           .append('meleeAttackpower', this.meleeAttackpower)
+           .append('meleeDamage', String.format('%s-%s', minMeleeDamage, maxMeleeDamage))
+           .append('meleeDps', String.format('%s/%s', mainhandMeleeDps, offhandMeleeDps))
+           .append('meleeSpeed', String.format('%s/%s', mainhandMeleeSpeed, offhandMeleeSpeed))
+           .append('expertise', String.format('%s/%s', mainhandExpertise, offhandExpertise))
+           .append('meleeHaste', String.format('%s%%', this.meleeHaste))
+           .append('meleeHit', String.format('+%s%%', this.meleeHit))
+           .append('meleeCrit', String.format('%s%%', this.meleeCrit))
+           .toString()
+   }
 }
 

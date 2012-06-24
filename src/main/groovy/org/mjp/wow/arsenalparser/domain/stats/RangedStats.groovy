@@ -8,23 +8,24 @@ import org.apache.commons.lang3.builder.ToStringStyle
  */
 class RangedStats {
    Integer rangedAttackpower
-   String  rangedDamage
+   Integer minRangedDamage
+   Integer maxRangedDamage
    Double  rangedDps
    Double  rangedSpeed
    Double  rangedHaste
    Double  rangedHit
    Double  rangedCrit
 
-    def String toString() {
-        return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
-            .append('rangedAttackpower', this.rangedAttackpower)
-            .append('rangedDamage', this.rangedDamage)
-            .append('rangedDps', this.rangedDps)
-            .append('rangedSpeed', this.rangedSpeed + '%')
-            .append('rangedHaste', this.rangedHaste + '%')
-            .append('rangedHit', '+' + this.rangedHit + '%')
-            .append('rangedCrit', this.rangedCrit + '%')
-            .toString()
-    }
+   def String toString() {
+       return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+           .append('rangedAttackpower', this.rangedAttackpower)
+           .append('rangedDamage', String.format('%s-%s', minRangedDamage, maxRangedDamage))
+           .append('rangedDps', this.rangedDps)
+           .append('rangedSpeed', String.format('%s%%', this.rangedSpeed))
+           .append('rangedHaste', String.format('%s%%', this.rangedHaste))
+           .append('rangedHit', String.format('+%s%%', this.rangedHit))
+           .append('rangedCrit', String.format('%s%%', this.rangedCrit))
+           .toString()
+   }
 }
 

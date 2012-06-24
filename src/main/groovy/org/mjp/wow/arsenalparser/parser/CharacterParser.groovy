@@ -172,7 +172,11 @@ class CharacterParser {
         def rangedStats = new RangedStats()
 
         rangedStats.rangedAttackpower = JU.getInt(this.liElementsDataidMap, 'rangedattackpower', 'span', 1)
-        rangedStats.rangedDamage = JU.getText(this.liElementsDataidMap, 'rangeddamage', 'span', 1)
+        def rangedDamageText = JU.getText(this.liElementsDataidMap, 'rangeddamage', 'span', 1)
+        def rangedDamageArray = rangedDamageText =~ /(\d+)\D(\d+)/
+        rangedStats.minRangedDamage = Integer.parseInt(rangedDamageArray[0][1])
+        rangedStats.maxRangedDamage = Integer.parseInt(rangedDamageArray[0][2])
+        
         rangedStats.rangedDps = JU.getDouble(this.liElementsDataidMap, 'rangeddps', 'span', 1)
         rangedStats.rangedSpeed = JU.getDouble(this.liElementsDataidMap, 'rangedspeed', 'span', 1)
         rangedStats.rangedHaste = JU.getDouble(this.liElementsDataidMap, 'rangedhaste', 'span', 1)

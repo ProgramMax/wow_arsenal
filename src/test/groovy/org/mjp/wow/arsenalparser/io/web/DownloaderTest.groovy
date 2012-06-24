@@ -28,8 +28,8 @@ class DownloaderTest {
         LOGGER.debug('downloaded file exists: {}', testFile.exists())
         assert testFile.exists()
         
-        LOGGER.debug('downloaded file size is correct: {}', 57629 == testFile.size())
-        assert 57629 == testFile.size()
+        LOGGER.debug('downloaded file size is correct: {}', 59909 == testFile.size())
+        assert 59909 == testFile.size()
     }
     
     @Test def void testCheckUrl() {
