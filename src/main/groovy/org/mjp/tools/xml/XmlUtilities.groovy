@@ -75,7 +75,7 @@ class JerichoUtilities {
     }
 
     def static String findElementByAttribute(Element element, def filterName, attributeName) {
-        def attributeValue = element.getAttributeValue attributeName
+        def attributeValue = element.getAttributeValue(attributeName)
         def elementContent
 
         if (attributeValue == filterName) {
@@ -88,7 +88,7 @@ class JerichoUtilities {
     }
 
     def static Map<String, Element> getElementAsMap(Element element, def attributeName) {
-        def attributeValue = element.getAttributeValue attributeName
+        def attributeValue = element.getAttributeValue(attributeName)
         def elementContent = getText(element)
         def map = [ : ]
 
