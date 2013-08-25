@@ -7,3 +7,6 @@
 *.groovy~
 /bin
 /temp
+/.project
+/.classpath
+.settings
