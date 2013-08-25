@@ -151,7 +151,7 @@ class DownloaderTest {
     }
     
     def String getElementContent(def element, def name, def attrName) {
-        String attr = element.getAttributeValue attrName  
+        String attr = element.getAttributeValue(attrName)
         
         String label = null
         
