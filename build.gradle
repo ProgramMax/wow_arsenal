@@ -1,5 +1,12 @@
 apply plugin: 'eclipse'
-apply plugin: 'groovy'
+
+sourceCompatibility = 1.7
+version = '1.0'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'WoW Arsenal Parser', 'Implementation-Version': version
+    }
+}
 
 repositories {
     mavenCentral()
@@ -20,7 +27,6 @@ dependencies {
     compile 'org.scala-lang:scala-library:2.10.1'
     compile 'org.scala-lang:scala-compiler:2.10.1'
 
-
     compile 'commons-cli:commons-cli:1.2'
     compile 'commons-codec:commons-codec:1.8'
     compile 'commons-configuration:commons-configuration:1.9'
@@ -34,9 +40,9 @@ dependencies {
     compile 'commons-logging:commons-logging:1.1.3'
     compile 'commons-collections:commons-collections:3.2.1'
 //    compile 'commons-httpclient:commons-httpclient:3.1'
-
-    testCompile 'junit:junit:4.11'
-    testCompile 'org.testng:testng:6.8.5'
+    
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+    testCompile 'org.testng:testng:6.8.7'
 
     testCompile 'org.easymock:easymock:3.1'
     testCompile 'org.easymock:easymockclassextension:3.1'
@@ -50,3 +56,14 @@ dependencies {
 //    compile 'org.apache.lucene:lucene-core:3.6.0'
 }
 
+test {
+    systemProperties 'property': 'value'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
