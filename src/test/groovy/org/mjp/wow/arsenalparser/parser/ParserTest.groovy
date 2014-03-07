@@ -7,10 +7,10 @@ import static org.junit.Assert.assertTrue
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
-class SourceParserTest {
-    final def LOGGER = LoggerFactory.getLogger(this.class)
+class ParserTest {
+    final static def LOGGER = LoggerFactory.getLogger(ParserTest.class)
 
-    final def TEST_URL = 'data/http/eu.battle.net/wow/de/character/' +
+    final static def TEST_URL = 'data/http/eu.battle.net/wow/de/character/' +
         'malorne/nadiem/simple/index.html'
 
     final TEST_LINK_LIST = ['Nadiem @ Malorne', 'Nadiem', 'Empire', 'Gnom',
