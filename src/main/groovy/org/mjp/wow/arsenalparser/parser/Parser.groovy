@@ -12,7 +12,7 @@ import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
 class SourceParser {
-    final static LOGGER = LoggerFactory.getLogger(this.class)
+    final static LOGGER = LoggerFactory.getLogger(SourceParser.class)
 
     def linkList = []
     def linkMap = [ : ]
